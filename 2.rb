@@ -20,13 +20,13 @@ input = gets
 number = 2
 
 def toMD5hash(text)
-    md5 = Digest::MD5.hexdigest( text)
-  
+    md5 = Digest::MD5.new 
+    md5<<text
 end
 while true
-   result = input+number.to_c
+   result = input+number.to_s
+   toMD5hash(result)
     if result.include? "00000"
-        puts toMD5hash(result)
         puts number
         break
     else
