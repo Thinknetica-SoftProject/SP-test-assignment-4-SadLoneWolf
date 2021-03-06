@@ -17,7 +17,7 @@
 ## Решение:
 require 'digest'
 input = gets
-number = 2
+number = 0
 
 def toMD5hash(text)
     md5 = Digest::MD5.new 
