@@ -15,4 +15,21 @@
 #
 #
 ## Решение:
+require 'digest'
+input = gets
+number = 2
 
+def toMD5hash(text)
+    md5 = Digest::MD5.hexdigest( text)
+  
+end
+while true
+   result = input+number.to_c
+    if result.include? "00000"
+        puts toMD5hash(result)
+        puts number
+        break
+    else
+        number+=1
+    end
+end

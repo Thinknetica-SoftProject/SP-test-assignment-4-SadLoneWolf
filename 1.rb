@@ -15,7 +15,16 @@
 #
 #
 ## Решение:
-
-
-
-
+floor = 0
+text = ""
+File.open("data/1.txt","r").each do |file|
+    text +=file
+end
+text.split("").each do |i|
+    if i == '('
+        floor +=1
+    else
+        floor -=1
+    end  
+end
+puts floor
