@@ -16,4 +16,14 @@
 #
 ## Решение:
 
-
+arr  = File.open('data/4.txt').map{|line| line.gsub('x',' ')}
+arr.to_a
+puts arr
+total = 0
+arr.each do |single|
+    a = single.min # Длина
+    b = single.max # ширина
+    c = arr.select{x > single.min && x <single.max} #высота (фильтрация элементов массива)
+    total += (2*a*b + 2*c*b + 2*c*a) + 3*a 
+end
+puts total

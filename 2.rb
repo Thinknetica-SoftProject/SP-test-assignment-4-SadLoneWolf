@@ -25,8 +25,8 @@ def toMD5hash(text)
 end
 while true
    result = input+number.to_s
-   toMD5hash(result)
-    if result.include? "00000"
+   puts checked = toMD5hash(result).to_s
+    if result.start_with? ("00000")
         puts number
         break
     else

@@ -10,4 +10,29 @@
 #
 ## Решение:
 
+def check_array(numbers)
+    max = numbers[0]
+    min = numbers[0]
+    numbers.each do |item|
+      if(item.to_i > max.to_i)
+              max = item;
+          elsif(item.to_i < min.to_i)
+              min = item
+      end 
+     end    
+    return (max.to_i-min.to_i)
+  end
 
+
+arr = File.foreach("data/3.txt").map{|line| line.split('\t')} 
+arr.to_a
+
+numbers = Array[]
+difference = 0
+
+arr.each do |i|
+    numbers = i 
+    difference += check_array(numbers)
+   
+end
+puts difference
